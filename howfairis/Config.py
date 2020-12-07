@@ -24,7 +24,7 @@ class Config:
         try:
             validate_against_schema(default_config)
         except (Invalid, MultipleInvalid):
-            print("Default configuration file should follow the schema for it to be considered.")
+            print("The default configuration file should follow the schema for it to be considered.")
             return dict()
         return default_config
 
@@ -60,7 +60,7 @@ class Config:
         try:
             validate_against_schema(repo_config)
         except (Invalid, MultipleInvalid):
-            print("Repository's configuration file should follow the schema for it to be considered.")
+            print("The repository's configuration file should follow the schema for it to be considered.")
             return dict()
 
         return repo_config
@@ -82,7 +82,7 @@ class Config:
         try:
             validate_against_schema(user_config)
         except Exception as e:
-            raise Exception("User configuration file should follow the schema.") from e
+            raise Exception("The user configuration file should follow the schema.") from e
         return user_config
 
     @property
